@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/baocun.png</file>
+        <file>img/bianjiqi_beijingyanse.png</file>
+        <file>img/chaxun.png</file>
+        <file>img/chazhaotihuan.png</file>
+        <file>img/dakai.png</file>
+        <file>img/fuzhi.png</file>
+        <file>img/gongjulan.png</file>
+        <file>img/guanyu.png</file>
+        <file>img/houtui.png</file>
+        <file>img/jianqiewenjian.png</file>
+        <file>img/jiantouqianjin.png</file>
+        <file>img/jurassic_font-color.png</file>
+        <file>img/lingcunwei.png</file>
+        <file>img/niantie.png</file>
+        <file>img/quanxuan.png</file>
+        <file>img/tuichu.png</file>
+        <file>img/xianshihanghao.png</file>
+        <file>img/xinjian.png</file>
+        <file>img/zhuangtailan.png</file>
+        <file>img/zidonghuanhang.png</file>
+        <file>img/ziti.png</file>
+        <file>img/zitibeijingse.png</file>
+    </qresource>
+</RCC>
