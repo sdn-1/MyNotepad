@@ -139,7 +139,7 @@
   <action name="actionNew">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/xinjian.png</normaloff>:/img/xinjian.png</iconset>
+     <normaloff>:/img/xinjian_1.png</normaloff>:/img/xinjian_1.png</iconset>
    </property>
    <property name="text">
     <string>新建(&amp;N)</string>
@@ -157,7 +157,7 @@
   <action name="actionOpen">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/dakai.png</normaloff>:/img/dakai.png</iconset>
+     <normaloff>:/img/dakaiwenjianjia.png</normaloff>:/img/dakaiwenjianjia.png</iconset>
    </property>
    <property name="text">
     <string>打开(&amp;O)</string>
@@ -172,7 +172,7 @@
   <action name="actionSave">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/baocun.png</normaloff>:/img/baocun.png</iconset>
+     <normaloff>:/img/baocun_1.png</normaloff>:/img/baocun_1.png</iconset>
    </property>
    <property name="text">
     <string>保存(&amp;S)</string>
@@ -187,7 +187,7 @@
   <action name="actionSaveAs">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/lingcunwei.png</normaloff>:/img/lingcunwei.png</iconset>
+     <normaloff>:/img/lingcun.png</normaloff>:/img/lingcun.png</iconset>
    </property>
    <property name="text">
     <string>另存为(&amp;A)</string>
@@ -207,7 +207,7 @@
   <action name="actionUndo">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/houtui.png</normaloff>:/img/houtui.png</iconset>
+     <normaloff>:/img/chexiao.png</normaloff>:/img/chexiao.png</iconset>
    </property>
    <property name="text">
     <string>撤销(&amp;Z)</string>
@@ -222,7 +222,7 @@
   <action name="actionRedo">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/jiantouqianjin.png</normaloff>:/img/jiantouqianjin.png</iconset>
+     <normaloff>:/img/zhongzuo.png</normaloff>:/img/zhongzuo.png</iconset>
    </property>
    <property name="text">
     <string>恢复(&amp;)</string>
@@ -237,7 +237,7 @@
   <action name="actionCut">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/jianqiewenjian.png</normaloff>:/img/jianqiewenjian.png</iconset>
+     <normaloff>:/img/jianqie.png</normaloff>:/img/jianqie.png</iconset>
    </property>
    <property name="text">
     <string>剪切</string>
@@ -267,7 +267,7 @@
   <action name="actionPaste">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/niantie.png</normaloff>:/img/niantie.png</iconset>
+     <normaloff>:/img/niantie_1.png</normaloff>:/img/niantie_1.png</iconset>
    </property>
    <property name="text">
     <string>粘贴</string>
@@ -282,7 +282,7 @@
   <action name="actionFind">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/chaxun.png</normaloff>:/img/chaxun.png</iconset>
+     <normaloff>:/img/search.png</normaloff>:/img/search.png</iconset>
    </property>
    <property name="text">
     <string>查找(&amp;F)</string>
@@ -297,7 +297,7 @@
   <action name="actionReplace">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/chazhaotihuan.png</normaloff>:/img/chazhaotihuan.png</iconset>
+     <normaloff>:/img/tihuan.png</normaloff>:/img/tihuan.png</iconset>
    </property>
    <property name="text">
     <string>替换</string>
@@ -312,7 +312,7 @@
   <action name="actionFont">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/ziti.png</normaloff>:/img/ziti.png</iconset>
+     <normaloff>:/img/zitiyangshi.png</normaloff>:/img/zitiyangshi.png</iconset>
    </property>
    <property name="text">
     <string>字体(&amp;F)</string>
@@ -336,7 +336,7 @@
   <action name="actiontoolBar">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/gongjulan.png</normaloff>:/img/gongjulan.png</iconset>
+     <normaloff>:/img/zu.png</normaloff>:/img/zu.png</iconset>
    </property>
    <property name="text">
     <string>工具栏</string>
@@ -348,7 +348,7 @@
   <action name="actionStusBar">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/img/zhuangtailan.png</normaloff>:/img/zhuangtailan.png</iconset>
+     <normaloff>:/img/zhuangtailan_1.png</normaloff>:/img/zhuangtailan_1.png</iconset>
    </property>
    <property name="text">
     <string>状态栏</string>
