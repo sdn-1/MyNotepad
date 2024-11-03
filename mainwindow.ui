@@ -74,20 +74,20 @@
     <property name="title">
      <string>格式(&amp;C)</string>
     </property>
-    <addaction name="actionWrap"/>
+    <addaction name="actionLineWrap"/>
     <addaction name="action_L"/>
     <addaction name="actionFont"/>
     <addaction name="actionFontColor"/>
     <addaction name="separator"/>
-    <addaction name="actionFontUnderColor"/>
-    <addaction name="actionUnderColor"/>
+    <addaction name="actionFontBackgroundColor"/>
+    <addaction name="actionBackgroundColor"/>
    </widget>
    <widget class="QMenu" name="menu_V">
     <property name="title">
      <string>查看(&amp;V)</string>
     </property>
-    <addaction name="actiontoolBar"/>
-    <addaction name="actionStusBar"/>
+    <addaction name="actionShowToolBar"/>
+    <addaction name="actionShowStatusBar"/>
    </widget>
    <widget class="QMenu" name="menu_H">
     <property name="title">
@@ -131,10 +131,10 @@
    <addaction name="separator"/>
    <addaction name="actionFont"/>
    <addaction name="action_L"/>
-   <addaction name="actionWrap"/>
+   <addaction name="actionLineWrap"/>
    <addaction name="separator"/>
-   <addaction name="actiontoolBar"/>
-   <addaction name="actionStusBar"/>
+   <addaction name="actionShowToolBar"/>
+   <addaction name="actionShowStatusBar"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
@@ -321,7 +321,10 @@
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
-  <action name="actionWrap">
+  <action name="actionLineWrap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/img/zidonghuanhang.png</normaloff>:/img/zidonghuanhang.png</iconset>
@@ -333,7 +336,10 @@
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
-  <action name="actiontoolBar">
+  <action name="actionShowToolBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/img/zu.png</normaloff>:/img/zu.png</iconset>
@@ -345,7 +351,13 @@
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
-  <action name="actionStusBar">
+  <action name="actionShowStatusBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/img/zhuangtailan_1.png</normaloff>:/img/zhuangtailan_1.png</iconset>
@@ -407,7 +419,7 @@
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
-  <action name="actionUnderColor">
+  <action name="actionBackgroundColor">
    <property name="text">
     <string>编辑器背景色</string>
    </property>
@@ -415,7 +427,7 @@
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
-  <action name="actionFontUnderColor">
+  <action name="actionFontBackgroundColor">
    <property name="text">
     <string>字体背景色</string>
    </property>

@@ -8,6 +8,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QColorDialog>
+#include <QFontDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,6 +38,19 @@ MainWindow::MainWindow(QWidget *parent)
     ui->actionRedo->setEnabled(false);
     ui->actionCut->setEnabled(false);
     ui->actionPaste->setEnabled(false);
+
+    QPlainTextEdit::LineWrapMode mode = ui->textEdit->lineWrapMode();
+
+    if ( mode == QTextEdit::NoWrap ) {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::WidgetWidth);
+        ui->actionLineWrap->setCheckable(false);
+    } else {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
+        ui->actionLineWrap->setCheckable(true);
+    }
+
+    ui->actionShowStatusBar->setChecked(true);
+    ui->actionShowToolBar->setChecked(true);
 }
 
 MainWindow::~MainWindow()
@@ -268,5 +283,83 @@ void MainWindow::on_textEdit_redoAvailable(bool b)
 void MainWindow::on_textEdit_undoAvailable(bool b)
 {
     ui->actionUndo->setEnabled(b);
+}
+
+//字体
+void MainWindow::on_actionFont_triggered()
+{
+    bool ok = false;
+    QFont font = QFontDialog::getFont(&ok, this);
+
+    if (ok)
+        ui->textEdit->setFont(font);
+}
+
+//字体颜色
+void MainWindow::on_actionFontColor_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
+    if (color.isValid()) {
+        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {color: %1}").arg(color.name()));
+    }
+}
+
+
+void MainWindow::on_actionBackgroundColor_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
+    if (color.isValid()) {
+        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {backgroundcolor: %1}").arg(color.name()));
+    }
+}
+
+
+void MainWindow::on_actionFontBackgroundColor_triggered()
+{
+
+}
+
+
+void MainWindow::on_actionLineWrap_triggered()
+{
+    QPlainTextEdit::LineWrapMode mode = ui->textEdit->lineWrapMode();
+
+    if ( mode == QTextEdit::NoWrap ) {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::WidgetWidth);
+        ui->actionLineWrap->setCheckable(true);
+    } else {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
+        ui->actionLineWrap->setCheckable(false);
+    }
+}
+
+//工具栏，状态栏
+void MainWindow::on_actionShowToolBar_triggered()
+{
+    bool visible = ui->toolBar->isVisible();
+    ui->toolBar->setVisible(!visible);
+    ui->actionShowToolBar->setChecked(!visible);
+}
+
+
+void MainWindow::on_actionShowStatusBar_triggered()
+{
+    bool visible = ui->statusbar->isVisible();
+    ui->statusbar->setVisible(!visible);
+    ui->actionShowStatusBar->setChecked(!visible);
+}
+
+//全选
+void MainWindow::on_actionSelectAll_triggered()
+{
+    ui->textEdit->selectAll();
+}
+
+//退出
+void MainWindow::on_actionExit_triggered()
+{
+    //exit(0);
+    if (userEditConfirmed())
+        exit(0);
 }
 
