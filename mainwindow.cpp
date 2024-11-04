@@ -68,14 +68,14 @@ void MainWindow::on_actionAbout_triggered()
 //查找对话框
 void MainWindow::on_actionFind_triggered()
 {
-    SearchDialog dlg;
+    SearchDialog dlg(this, ui->textEdit);
     dlg.exec();
 }
 
 //替换对话框
 void MainWindow::on_actionReplace_triggered()
 {
-    ReplaceDialog dlg;
+    ReplaceDialog dlg(this, ui->textEdit);
     dlg.exec();
 }
 
