@@ -21,11 +21,11 @@ MainWindow::MainWindow(QWidget *parent)
     on_actionNew_triggered();
 
     //ui->statusbar;
-    statusLabel.setMaximumWidth(150);
+    statusLabel.setMaximumWidth(200);
     statusLabel.setText(" length: " + QString::number(0) + "   lines:  " + QString::number(1));
     ui->statusbar->addPermanentWidget(&statusLabel);
 
-    statusCursorLabel.setMaximumWidth(150);
+    statusCursorLabel.setMaximumWidth(200);
     statusCursorLabel.setText(" length: " + QString::number(0) + "   lines:  " + QString::number(1));
     ui->statusbar->addPermanentWidget(&statusCursorLabel);
 
@@ -51,6 +51,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->actionShowStatusBar->setChecked(true);
     ui->actionShowToolBar->setChecked(true);
+
+    on_actionShowLineNumber_triggered(true);
+
+    //connect(ui->actionShowLineNumber, SIGNAL(triggered(bool)), ui->textEdit, SLOT(hideLineNumberArea(bool)));
 }
 
 MainWindow::~MainWindow()
@@ -209,6 +213,10 @@ void MainWindow::on_textEdit_textChanged()
         this->setWindowTitle("*" + this->windowTitle());
         textChanged = true;
     }
+
+    statusLabel.setText(" length: " + QString::number(ui->textEdit->toPlainText().length()) +
+                        "   lines:  " +
+                        QString::number(ui->textEdit->document()->lineCount()));
 }
 
 bool MainWindow::userEditConfirmed()
@@ -309,7 +317,7 @@ void MainWindow::on_actionBackgroundColor_triggered()
 {
     QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
     if (color.isValid()) {
-        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {backgroundcolor: %1}").arg(color.name()));
+        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {background-color: %1}").arg(color.name()));
     }
 }
 
@@ -361,5 +369,33 @@ void MainWindow::on_actionExit_triggered()
     //exit(0);
     if (userEditConfirmed())
         exit(0);
+}
+
+//光标位置
+void MainWindow::on_textEdit_cursorPositionChanged()
+{
+    int col = 0;
+    int ln = 0;
+    int flg = -1;
+    int pos = ui->textEdit->textCursor().position();    //textCursor() 获取光标位置
+    QString text = ui->textEdit->toPlainText();
+
+    for (int i = 0; i < pos; i++) {
+        if (text[i] == '\n' ) {
+            ln ++;
+            flg = i;
+        }
+    }
+
+    flg ++;
+    col = pos - flg;
+
+    statusCursorLabel.setText(" length: " + QString::number(ln + 1) + "   lines:  " + QString::number(col + 1));
+}
+
+
+void MainWindow::on_actionShowLineNumber_triggered(bool checked)
+{
+    ui->textEdit->hideLineNumberArea(checked);
 }
 
